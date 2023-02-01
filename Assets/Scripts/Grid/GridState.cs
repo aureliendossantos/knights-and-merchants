@@ -156,16 +156,17 @@ public class GridState : StateMachine, IDragHandler, IPointerDownHandler, IPoint
                 audioManager.Build();
                 Debug.Log(width);
                 // Placement with txt values
+                Vector3 buildingOffset = new Vector3(building.spriteOffset.x / 40f, -building.spriteOffset.y / 40f);
                 Instantiate(
                     buildingPrefab,
                     grid.CellToWorld(
                         grid.WorldToCell(pivotCell)
                         + new Vector3Int(width == 4 ? 2 : 1, -1, 0)
                     )
-                    + new Vector3(building.spriteOffset.x / 40f, -building.spriteOffset.y / 40f)
+                    + buildingOffset
                     ,
                     Quaternion.identity)
-                    .SetParameters(building, gameState);
+                    .SetParameters(building, grid.CellToWorld(mousePos + new Vector3Int(width == 4 ? 1 : 0, 1, 0)), gameState);
                 // Manual placement
                 // Instantiate(buildingPrefab, grid.CellToWorld(grid.WorldToCell(mousePos)) + new Vector3(0.5f, 0, 0), Quaternion.identity).SetParameters(building, gameState);
             }

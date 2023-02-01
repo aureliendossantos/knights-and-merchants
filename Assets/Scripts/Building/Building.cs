@@ -11,8 +11,8 @@ public class Building : ScriptableObject
     [TextArea(5, 5)]
     public string dimensions;
     public int entranceX;
-    public Animation idle;
-    public Vector2 idleOffset;
+    public AnimatorOverrideController animator;
+    public AudioClip animationSound;
     [Header("Production")]
     public Resource production;
     public int productionQuantity;

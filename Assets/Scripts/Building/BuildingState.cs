@@ -10,9 +10,10 @@ public class BuildingState : StateMachine
 
     GameState gameState;
     SpriteRenderer spriteRenderer;
+    AudioSource audioSource;
     public Building building;
-    public Transform animationTransform;
-    public Animator animator;
+    [SerializeField] Transform animationTransform;
+    [SerializeField] Animator animator;
 
     /// <summary>
     /// StateMachine boilerplate: create states
@@ -28,12 +29,18 @@ public class BuildingState : StateMachine
         return restingState;
     }
 
-    public void SetParameters(Building building, GameState gameState)
+    public void SetParameters(Building building, Vector3 entrancePos, GameState gameState)
     {
         this.gameState = gameState;
         this.building = building;
+        if (building.animator != null)
+            this.animator.runtimeAnimatorController = building.animator;
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         spriteRenderer.sprite = building.sprite;
+        audioSource = GetComponentInChildren<AudioSource>();
+        if (building.animationSound != null)
+            audioSource.clip = building.animationSound;
+        animationTransform.position = entrancePos;
     }
 
     public void StartRest()
@@ -50,13 +57,13 @@ public class BuildingState : StateMachine
 
     IEnumerator Rest()
     {
-        yield return new WaitForSeconds(3.0f);
+        yield return new WaitForSeconds(5.0f);
         ChangeState(workingState);
     }
 
     IEnumerator Production()
     {
-        yield return new WaitForSeconds(3.0f);
+        yield return new WaitForSeconds(5.0f);
         gameState.inventory.AddResource(building.production, building.productionQuantity);
         ChangeState(restingState);
     }

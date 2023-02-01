@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 3edefaf4227af2042b5abc696cf5ef80, type: 3}
   sprite: {fileID: 21300000, guid: 661ab357e23870e45aa3b7d8f15d903e, type: 3}
-  spriteOffset: {x: -62, y: -60}
+  spriteOffset: {x: -22, y: -60}
   dimensions: '0000
 
     0000
@@ -23,7 +23,7 @@ MonoBehaviour:
 
     1110'
   entranceX: 2
-  idle: {fileID: 0}
-  idleOffset: {x: 0, y: 0}
+  animator: {fileID: 0}
+  animationSound: {fileID: 0}
   production: {fileID: 11400000, guid: 2f5fe504543710e4baee7884b5cacc3c, type: 2}
   productionQuantity: 1

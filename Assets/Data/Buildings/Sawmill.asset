@@ -23,7 +23,7 @@ MonoBehaviour:
 
     1111'
   entranceX: 1
-  idle: {fileID: 0}
-  idleOffset: {x: 0, y: 0}
+  animator: {fileID: 22100000, guid: 99c0f23e61fda6141a477a05b362686c, type: 2}
+  animationSound: {fileID: 8300000, guid: be457a6786a75cc41b9310c6aa7ed303, type: 3}
   production: {fileID: 11400000, guid: f62ba848d3e960b408c4bca342badbef, type: 2}
   productionQuantity: 1
