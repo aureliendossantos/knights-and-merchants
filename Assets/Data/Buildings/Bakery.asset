@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1391e1705acd5d148849f8046c6548f8, type: 3}
+  m_Name: Bakery
+  m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: b824a949997009a41bdd49eb16f93c2b, type: 3}
+  sprite: {fileID: 21300000, guid: 8280ca4024566034fad56a5eabe279d9, type: 3}
+  spriteOffset: {x: -62, y: -60}
+  dimensions: '0000
+
+    0111
+
+    0111
+
+    0111'
+  entranceX: 3
+  idle: {fileID: 0}
+  idleOffset: {x: 0, y: 0}
+  production: {fileID: 11400000, guid: 2f5fe504543710e4baee7884b5cacc3c, type: 2}
+  productionQuantity: 1
