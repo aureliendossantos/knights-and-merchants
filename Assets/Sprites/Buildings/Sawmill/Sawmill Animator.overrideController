@@ -9,7 +9,11 @@ AnimatorOverrideController:
   m_Name: Sawmill Animator
   m_Controller: {fileID: 9100000, guid: 65b1adcabc8a6b541a8bd7380f42e4e4, type: 2}
   m_Clips:
-  - m_OriginalClip: {fileID: 7400000, guid: f64d6e392713f52428336d08d22ad1fc, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 338cbe9f44c92964eafebdc1847aaab9, type: 2}
     m_OverrideClip: {fileID: 7400000, guid: a611d22b32e635044ad497a23830628c, type: 2}
-  - m_OriginalClip: {fileID: 7400000, guid: 3c1a9bf178b6e8a48a9bed06bcf4b651, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 0c90fa03a2c54a047924c56dd49cada7, type: 2}
     m_OverrideClip: {fileID: 7400000, guid: 0b44b244b90ae7442841a56f9767a836, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: ec35b3f14ac7d024384fd5a4ce6f311f, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 31da0bb5a6eecd04380fee3277b6386b, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 57cce3bd2205a4849956dab4e5324c78, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 62fc2c770fa9a064f8111f006d99ff0b, type: 2}

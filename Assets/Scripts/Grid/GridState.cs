@@ -34,7 +34,7 @@ public class GridState : StateMachine, IDragHandler, IPointerDownHandler, IPoint
     [SerializeField] Tilemap groundLayer;
     [SerializeField] Tilemap roadLayer;
     [SerializeField] Tilemap buildingsLayer;
-    [SerializeField] Tilemap uiLayer;
+    public Tilemap uiLayer;
 
     Vector3Int mousePos;
     Vector3Int previousMousePos = new Vector3Int();
@@ -169,6 +169,7 @@ public class GridState : StateMachine, IDragHandler, IPointerDownHandler, IPoint
                     .SetParameters(building, grid.CellToWorld(mousePos + new Vector3Int(width == 4 ? 1 : 0, 1, 0)), gameState);
                 // Manual placement
                 // Instantiate(buildingPrefab, grid.CellToWorld(grid.WorldToCell(mousePos)) + new Vector3(0.5f, 0, 0), Quaternion.identity).SetParameters(building, gameState);
+                ChangeState(idleState);
             }
         }
     }

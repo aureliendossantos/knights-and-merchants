@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Quarry Animator
+  m_Controller: {fileID: 9100000, guid: 65b1adcabc8a6b541a8bd7380f42e4e4, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 338cbe9f44c92964eafebdc1847aaab9, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: f64d6e392713f52428336d08d22ad1fc, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 0c90fa03a2c54a047924c56dd49cada7, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 3c1a9bf178b6e8a48a9bed06bcf4b651, type: 2}

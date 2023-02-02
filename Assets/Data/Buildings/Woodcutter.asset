@@ -23,7 +23,7 @@ MonoBehaviour:
 
     1110'
   entranceX: 2
-  animator: {fileID: 0}
+  animator: {fileID: 22100000, guid: 81a6c67e52d52e44889357bcc3f57157, type: 2}
   animationSound: {fileID: 0}
   production: {fileID: 11400000, guid: 2f5fe504543710e4baee7884b5cacc3c, type: 2}
   productionQuantity: 1

@@ -160,6 +160,10 @@ MonoBehaviour:
       quantity: 0
     - resource: {fileID: 11400000, guid: 2f5fe504543710e4baee7884b5cacc3c, type: 2}
       quantity: 0
+    - resource: {fileID: 11400000, guid: 1939d52026bdafa489e340f7a53140b0, type: 2}
+      quantity: 0
+    - resource: {fileID: 11400000, guid: 2efad92256f3bfe4286dc10c1558510b, type: 2}
+      quantity: 0
   inventoryPanel: {fileID: 2072403526}
 --- !u!4 &62975867
 Transform:
@@ -4046,7 +4050,7 @@ Animator:
   m_GameObject: {fileID: 2001676978}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 65b1adcabc8a6b541a8bd7380f42e4e4, type: 2}
+  m_Controller: {fileID: 22100000, guid: 99c0f23e61fda6141a477a05b362686c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
