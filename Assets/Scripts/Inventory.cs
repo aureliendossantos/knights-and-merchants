@@ -24,4 +24,10 @@ public class InventoryEntry
 {
     public Resource resource;
     public int quantity;
+
+    public InventoryEntry(Resource resource)
+    {
+        this.resource = resource;
+        quantity = 0;
+    }
 }

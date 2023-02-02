@@ -14,6 +14,9 @@ public class BuildingState : StateMachine
     public Building building;
     [SerializeField] Transform animationTransform;
     [SerializeField] Animator animator;
+    [SerializeField] SpriteRenderer productionSprite;
+
+    public Inventory inventory = new Inventory();
 
     /// <summary>
     /// StateMachine boilerplate: create states
@@ -41,6 +44,7 @@ public class BuildingState : StateMachine
         if (building.animationSound != null)
             audioSource.clip = building.animationSound;
         animationTransform.position = entrancePos;
+        inventory.contents.Add(new InventoryEntry(building.production));
     }
 
     public void StartRest()
@@ -64,6 +68,13 @@ public class BuildingState : StateMachine
     IEnumerator Production()
     {
         yield return new WaitForSeconds(5.0f);
+        inventory.AddResource(building.production, building.productionQuantity);
+        if (building.productionSprites != null)
+        {
+            int amount = inventory.contents[0].quantity > 5 ? 4 : inventory.contents[0].quantity - 1;
+            productionSprite.sprite = building.productionSprites[amount];
+            productionSprite.transform.localPosition = new Vector3(building.productionOffsets[amount].x / 40f, -building.productionOffsets[amount].y / 40f);
+        }
         gameState.inventory.AddResource(building.production, building.productionQuantity);
         ChangeState(restingState);
     }

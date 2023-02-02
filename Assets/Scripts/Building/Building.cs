@@ -13,6 +13,10 @@ public class Building : ScriptableObject
     public int entranceX;
     public AnimatorOverrideController animator;
     public AudioClip animationSound;
+    public List<Sprite> productionSprites;
+    public List<Vector2Int> productionOffsets;
+    public List<Sprite> stockSprites;
+    public List<Vector2Int> stockOffsets;
     [Header("Production")]
     public Resource production;
     public int productionQuantity;

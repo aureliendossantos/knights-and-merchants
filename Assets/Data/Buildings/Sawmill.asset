@@ -25,5 +25,19 @@ MonoBehaviour:
   entranceX: 1
   animator: {fileID: 22100000, guid: 99c0f23e61fda6141a477a05b362686c, type: 2}
   animationSound: {fileID: 8300000, guid: be457a6786a75cc41b9310c6aa7ed303, type: 3}
+  productionSprites:
+  - {fileID: 21300000, guid: 092cb2b2d2d72b841a35d5d4c10076c9, type: 3}
+  - {fileID: 21300000, guid: 97bb719db09b8d640a81a3d62ad78115, type: 3}
+  - {fileID: 21300000, guid: 43155217c2cd0324aa8f2846924772e5, type: 3}
+  - {fileID: 21300000, guid: b7f262982046de94bb801d885d11589d, type: 3}
+  - {fileID: 21300000, guid: c3aea9bd11a41df4fb9944e474580865, type: 3}
+  productionOffsets:
+  - {x: -20, y: -16}
+  - {x: -34, y: -21}
+  - {x: -38, y: -24}
+  - {x: -38, y: -24}
+  - {x: -38, y: -25}
+  stockSprites: []
+  stockOffsets: []
   production: {fileID: 11400000, guid: f62ba848d3e960b408c4bca342badbef, type: 2}
   productionQuantity: 1
