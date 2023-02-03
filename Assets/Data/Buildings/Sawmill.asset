@@ -37,7 +37,18 @@ MonoBehaviour:
   - {x: -38, y: -24}
   - {x: -38, y: -24}
   - {x: -38, y: -25}
-  stockSprites: []
-  stockOffsets: []
+  stockSprites:
+  - {fileID: 21300000, guid: 09721e400fa1c1e49ad47f7ceb403c6c, type: 3}
+  - {fileID: 21300000, guid: 6f9ecf99489b2d3449d5e1d92978b495, type: 3}
+  - {fileID: 21300000, guid: 21db2ad20e4393b4099156d155e448c8, type: 3}
+  - {fileID: 21300000, guid: b62b304a0f3034d44acac6227e33defa, type: 3}
+  - {fileID: 21300000, guid: f075017e9b39fad4fa458fbcdf28d76b, type: 3}
+  stockOffsets:
+  - {x: -62, y: -12}
+  - {x: -62, y: -12}
+  - {x: -62, y: -12}
+  - {x: -62, y: -10}
+  - {x: -62, y: -12}
   production: {fileID: 11400000, guid: f62ba848d3e960b408c4bca342badbef, type: 2}
   productionQuantity: 1
+  requiredResource: {fileID: 11400000, guid: 2f5fe504543710e4baee7884b5cacc3c, type: 2}

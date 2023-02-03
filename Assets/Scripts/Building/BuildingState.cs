@@ -15,6 +15,7 @@ public class BuildingState : StateMachine
     [SerializeField] Transform animationTransform;
     [SerializeField] Animator animator;
     [SerializeField] SpriteRenderer productionSprite;
+    [SerializeField] SpriteRenderer stockSprite;
 
     public Inventory inventory = new Inventory();
 
@@ -44,7 +45,10 @@ public class BuildingState : StateMachine
         if (building.animationSound != null)
             audioSource.clip = building.animationSound;
         animationTransform.position = entrancePos;
-        inventory.contents.Add(new InventoryEntry(building.production));
+        inventory.contents.Add(new InventoryEntry(building.production, 5));
+        if (building.requiredResource != null)
+            inventory.contents.Add(new InventoryEntry(building.requiredResource, 5, 5));
+        UpdateStockSprite();
     }
 
     public void StartRest()
@@ -62,20 +66,50 @@ public class BuildingState : StateMachine
     IEnumerator Rest()
     {
         yield return new WaitForSeconds(5.0f);
+        while (inventory.contents[0].IsFull())
+            yield return new WaitForSeconds(5.0f);
         ChangeState(workingState);
     }
 
     IEnumerator Production()
     {
-        yield return new WaitForSeconds(5.0f);
+        if (building.requiredResource)
+            inventory.RemoveResource(building.requiredResource, 1);
         inventory.AddResource(building.production, building.productionQuantity);
-        if (building.productionSprites != null)
+        yield return new WaitForSeconds(5.0f);
+        // UpdateProductionSprite();
+        // UpdateStockSprite();
+        gameState.inventory.AddResource(building.production, building.productionQuantity);
+        ChangeState(restingState);
+    }
+
+    public void UpdateProductionSprite()
+    {
+        if (inventory.contents[0].quantity == 0)
         {
-            int amount = inventory.contents[0].quantity > 5 ? 4 : inventory.contents[0].quantity - 1;
+            productionSprite.sprite = null;
+            return;
+        }
+        if (building.productionSprites.Count == 5)
+        {
+            int amount = inventory.contents[0].quantity - 1;
             productionSprite.sprite = building.productionSprites[amount];
             productionSprite.transform.localPosition = new Vector3(building.productionOffsets[amount].x / 40f, -building.productionOffsets[amount].y / 40f);
         }
-        gameState.inventory.AddResource(building.production, building.productionQuantity);
-        ChangeState(restingState);
+    }
+
+    public void UpdateStockSprite()
+    {
+        if (inventory.contents.Count > 1 && inventory.contents[1].quantity == 0)
+        {
+            stockSprite.sprite = null;
+            return;
+        }
+        if (inventory.contents.Count > 1 && building.stockSprites.Count == 5)
+        {
+            int amount = inventory.contents[1].quantity - 1;
+            stockSprite.sprite = building.stockSprites[amount];
+            stockSprite.transform.localPosition = new Vector3(building.stockOffsets[amount].x / 40f, -building.stockOffsets[amount].y / 40f);
+        }
     }
 }

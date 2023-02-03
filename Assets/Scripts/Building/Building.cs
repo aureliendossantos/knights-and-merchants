@@ -20,4 +20,5 @@ public class Building : ScriptableObject
     [Header("Production")]
     public Resource production;
     public int productionQuantity;
+    public Resource requiredResource;
 }

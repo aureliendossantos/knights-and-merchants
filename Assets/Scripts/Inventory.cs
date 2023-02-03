@@ -15,7 +15,27 @@ public class Inventory
             Debug.LogWarning("This inventory cannot store this resource.");
             return;
         }
+        if (contents[index].IsFull())
+        {
+            Debug.LogWarning("Inventory reached its maximum.");
+            return;
+        }
         contents[index].quantity += quantity;
+    }
+    public void RemoveResource(Resource resource, int quantity)
+    {
+        int index = contents.FindIndex(entry => entry.resource == resource);
+        if (index == -1)
+        {
+            Debug.LogWarning("This inventory cannot remove this resource.");
+            return;
+        }
+        if (contents[index].quantity <= 0)
+        {
+            Debug.LogWarning("Inventory empty.");
+            return;
+        }
+        contents[index].quantity -= quantity;
     }
 }
 
@@ -24,10 +44,17 @@ public class InventoryEntry
 {
     public Resource resource;
     public int quantity;
+    public int? maximum;
 
-    public InventoryEntry(Resource resource)
+    public bool IsFull()
+    {
+        return maximum.HasValue && quantity >= maximum;
+    }
+
+    public InventoryEntry(Resource resource, int? maximum = null, int quantity = 0)
     {
         this.resource = resource;
-        quantity = 0;
+        this.maximum = maximum;
+        this.quantity = quantity;
     }
 }
