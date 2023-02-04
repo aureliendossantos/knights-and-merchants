@@ -5,4 +5,9 @@
     {
         gridState = stateMachine;
     }
+
+    public override void Exit()
+    {
+        gridState.uiLayer.ClearAllTiles();
+    }
 }

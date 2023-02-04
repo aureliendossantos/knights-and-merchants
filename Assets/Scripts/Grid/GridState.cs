@@ -52,7 +52,7 @@ public class GridState : StateMachine, IDragHandler, IPointerDownHandler, IPoint
 
     protected override BaseState GetInitialState()
     {
-        return idleState;
+        return placingTileState;
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -169,7 +169,7 @@ public class GridState : StateMachine, IDragHandler, IPointerDownHandler, IPoint
                     .SetParameters(building, grid.CellToWorld(mousePos + new Vector3Int(width == 4 ? 1 : 0, 1, 0)), gameState);
                 // Manual placement
                 // Instantiate(buildingPrefab, grid.CellToWorld(grid.WorldToCell(mousePos)) + new Vector3(0.5f, 0, 0), Quaternion.identity).SetParameters(building, gameState);
-                ChangeState(idleState);
+                ChangeState(placingTileState);
             }
         }
     }
